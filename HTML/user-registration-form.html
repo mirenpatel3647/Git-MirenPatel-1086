@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <form action="submit.html" method="post">
+        <fieldset>
+            <legend>Personal Information Section</legend>
+
+            <div>
+                <label for="fname">Full Name:</label>
+                <input type="text" name="fname" id="fname" required pattern="^[A-Za-zÀ-ÿ\s,.'-]+$"
+                    placeholder="FirstName_  LastName">
+            </div>
+            <br>
+            <div>
+                <label for="about">About Yourself:</label>
+                <textarea name="details" id="about" cols="50" rows="5" placeholder="write about yourself..."></textarea>
+            </div>
+            <br>
+            <div>
+                <label for="mail">Email Address:</label>
+                <input type="email" name="mail" id="mail" required>
+            </div>
+            <br>
+            <div>
+                <label for="pword">Password:</label>
+                <input type="password" name="password" id="pword" minlength="8" required>
+            </div>
+            <br>
+            <div>
+                <label for="pnumber">Phone Number:</label>
+                <input type="tel" name="phonenumber" id="pnumber" required minlength="10" pattern="[0-9]{10}"
+                    placeholder="10 digit number">
+            </div>
+            <br>
+            <div>
+                <label for="web">Website:</label>
+                <input type="url" name="website" id="web">
+            </div>
+            <br>
+        </fieldset>
+        <fieldset>
+            <legend>Skills & Preferences</legend>
+            <div>
+                <label for="skill">Skills:</label>
+
+                <label for="skill1">HTML</label>
+                <input type="checkbox" name="skill" id="skill1" checked>
+
+                <label for="skill2">CSS</label>
+                <input type="checkbox" name="skill" id="skill2">
+
+                <label for="skill3">JavaScript</label>
+                <input type="checkbox" name="skill" id="skill3">
+            </div>
+            <br>
+            <div>
+                <label for="gender">Gender:</label>
+
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="male" checked>
+
+                <label for="female">Female</label>
+                <input type="radio" name="gender" id="female">
+            </div>
+            <br>
+            <div>
+                <label for="clr">Preferred Color:</label>
+                <input type="color" name="prefercolor" id="clr" value="#eb0f0f">
+            </div>
+            <br>
+            <div>
+                <label for="level">Experience Level:</label>
+                <input type="range" name="explevel" id="level" min="0" max="10" value="0" step="2"
+                    oninput="this.nextElementSibling.value = this.value">
+                <output>0</output>
+            </div>
+            <br>
+            <div>
+                <label for="searching">Search Interest:</label>
+                <input type="search" name="search" id="searching">
+            </div>
+
+        </fieldset>
+        <fieldset>
+            <legend>Date & Time Inputs</legend>
+            <div>
+                <label for="birth">Date of Birth:</label>
+                <input type="date" name="dob" id="birth" max="2005-01-01">
+            </div>
+
+            <div>
+                <label for="time">Available Time:</label>
+                <input type="time" name="availtime" id="time" min="09:00" max="18:30">
+            </div>
+
+            <div>
+                <label for="jdate">Joining Month:</label>
+                <input type="date" name="joindate" id="jdate" min="2026-01-01" max="2026-01-31" value="2026-01-09">
+            </div>
+
+            <div>
+                <label for="tweek">Training Week:</label>
+                <input type="week" name="tweek" id="tweek" value="2026-W07" disabled>
+            </div>
+
+            <div>
+                <label for="slot">Interview Slot:</label>
+                <input type="time" name="timeslot" id="slot">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Selection & Upload</legend>
+
+            <div>
+                <label for="tech">Technology:</label>
+
+                <label for="skills1">.NET</label>
+                <input type="checkbox" name="techskill" id="skills1">
+
+                <label for="skills2">Angular</label>
+                <input type="checkbox" name="techskill" id="skills2">
+
+                <label for="skills3">JAVA</label>
+                <input type="checkbox" name="techskill" id="skills3">
+
+                <label for="skills4">ReactJS</label>
+                <input type="checkbox" name="techskill" id="skills4">
+
+                <label for="skills5">QA</label>
+                <input type="checkbox" name="techskill" id="skills5">
+
+            </div>
+
+            <div>
+                <label for="pdfupload">Resume Upload:</label>
+                <input type="file" name="resume" id="pdfuplOAD" accept=".pdf">
+            </div>
+        </fieldset>
+
+        <div>
+            <label for="hidden">Hidden Field:</label>
+            <input type="hidden" name="dumy" value="1086">
+        </div>
+
+
+
+        <div>
+            <button type="submit" value="Submit">Submit</button>
+            <br>
+            <button type="reset" value="Reset">Reset</button>
+            <br>
+            <button>Button</button>
+        </div>
+        </fieldset>
+    </form>
+</body>
+
+</html>
