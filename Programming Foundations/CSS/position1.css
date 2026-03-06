@@ -1,0 +1,84 @@
+body{
+    /* background-color: aqua; */
+    background-image: url(../HTML/images/skyblueimage.jpg);
+}
+
+.static{
+    height: 80px;
+    width: 35px;
+    background-color: rgb(243, 215, 59) ;
+    /* border: 2px solid black; */
+    position: static;
+}
+
+.relative{
+height: 80px;
+width: 60px;
+/* position: relative; */
+position: absolute;
+/* top: 20px; */
+/* left: 50px; */
+background-color: pink;
+transform:rotate(90deg) ;
+}
+
+.purple{
+    background-color: purple;
+    height: 100px;
+    width: 100px;
+    /* position: absolute; */
+    position: relative;
+    /* top: 150px; */
+    left: 500px;
+    /* top: 00px; */
+    /* bottom: ; */
+    /* margin-top: 100px; */
+}
+
+.absolute{
+height: 100px;
+width: 100px;
+background-color: palevioletred;
+position: absolute;
+transform: skewX(30deg);
+top: 5px;
+left:500px;
+}
+
+.sticky{
+height: 150px;
+width: 150px;
+background-color: rgb(65, 111, 179);
+position: sticky;
+top: 2px;
+left: 100px ;
+}
+
+.fixed{
+height: 100px;
+width: 100px;
+background-color: rgb(240, 240, 112);
+position: fixed;
+/* left: 100px; */
+bottom: 2px;
+right: 10px;
+}
+
+.fixed:hover{
+    background-color: blue;
+    color: white;
+    /* z-index: 80px; */
+    /* transform: scale(20px); */
+    transform: scale(1.2);
+}
+
+
+
+/*
+.navbar{
+    position: fixed;
+    height: 50px;
+    border-width: auto ;
+    background-color: rgb(164, 164, 6);
+} 
+*/
