@@ -1,0 +1,99 @@
+/* body{
+    background-color: aquamarine;
+} */
+
+.pseudo1::first-letter{
+    /* font-style: ; */
+    /* font-variant: small-caps; */
+    font-size:larger;
+    font-weight: bold;
+    color: red;
+}
+
+.pseudo2::first-line{
+    font-weight: bold;
+    background-color: rgb(224, 224, 114);
+} 
+
+.pseudo3::before{
+    content: "Note:";
+    color: red;
+}
+
+.pseudo4::after{
+    content: " 2026";
+}
+
+.pseudo5 ul li:nth-child(odd){
+    background-color: beige;
+}
+
+.pseudo5 ul li:nth-child(even){
+    background-color: rgb(179, 179, 243);
+}
+
+.pseudo5 ul li:first-child{
+    color: red;
+}
+
+.pseudo5 ul li:last-child{
+    color: blue;
+}
+
+.pseudo5 ul li:nth-child(2){
+    font-weight: bold;
+}
+
+.pseudo6 a[target="_blank"]{
+    color: red;
+}
+
+.pseudo6 a[href^="https"]{
+    font-weight: bold;
+}
+
+.pseudo6 a:hover{
+    color: rgb(37, 239, 37);
+}
+
+.pseudo7 img[src$=".png"]{
+    border: 2px solid rgb(0, 0, 0);
+    outline: 2px solid red;
+    outline-offset: 1px;
+    width: 150px;
+    height: 150px;
+}
+
+.pseudo8 input[type="text"]{
+    background-color: rgb(137, 239, 239);
+    /* border: 2px solid rgb(139, 180, 227);   */
+}
+
+.decendent p{
+    color: rgb(115, 23, 219);
+}
+
+.child > p{
+color: rgb(87, 161, 137);
+}
+
+.adjacent h3 + p{
+    color: brown;
+}
+
+.general h3 ~ p{
+    color: rgb(7, 219, 71);
+    font-style: italic;
+}
+
+.pseudo9 input:focus{
+    border: 2px solid blueviolet;
+    background-color: aquamarine;
+    /* outline must be needed to apply css to the border after clicking it */
+    outline: none;  
+}
+
+.pseudo10 input:checked+label{
+    color: rgb(65, 149, 234);
+    font-weight: bold;
+}
