@@ -1,0 +1,91 @@
+body{
+    background-color: beige;
+}
+
+.menu span{
+    background-color: aqua;
+    border-radius: 40px;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-right: 10px;
+    /* margin-left: 30px; */
+}
+
+.featured{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.featured img{
+    width: 300px;
+    height: 300px;
+    margin-top: 5px;
+    float: left;
+    margin-right: 10px;
+}
+
+/* this is for used to get other contents from image float */
+.featured::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    /* gap: 80px; */
+    background-color: rgb(51, 70, 63);
+    color: white;
+    /* clear: both; */
+}
+
+.nav-links a{
+    color:white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.courses{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    /* background-color: white; */
+}
+
+.card{
+    background-color: white;
+    padding: 30px;  
+    text-align: center;
+    border-radius: 5px;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(51, 70, 63);
+    color: white;
+    padding: 15px;
+}
+
+.footer-link a{
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    /* text-decoration-color: red; */
+}
+
+@media (max-width:768px){
+    .courses{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
