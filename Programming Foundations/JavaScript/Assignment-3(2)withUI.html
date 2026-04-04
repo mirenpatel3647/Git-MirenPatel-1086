@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-3(2)</title>
+    <style>
+        table, th, td{
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <h2>Order Details</h2>
+    <table id="table1"></table>
+
+    <h2>Total Item Price</h2>
+    <table id="table2"></table>
+
+    <h2>Total Amount</h2>
+    <table id="table3"></table>
+
+    <h2>Total Quantity</h2>
+    <table id="table4"></table>
+
+    <script>
+        let orders=[
+    {
+        item:"AC",
+        quantity:4,
+        price:40000
+    },
+    {
+        item:"Mouse",
+        quantity:5,
+        price:400
+    },
+    {
+        item:"Keyboard",
+        quantity:10,
+        price:500
+    },
+    {
+        item:"Mobile",
+        quantity:4,
+        price:30000
+    }
+];
+console.log(orders);
+
+let details1=document.getElementById("table1");
+let output1=`
+<tr>
+    <th>Item</th>
+    <th>Quantity</th>
+    <th>Price</th>
+</tr>
+`;
+
+orders.forEach((item)=>{
+    output1=output1+`
+    <tr>
+        <td>${item.item}</td>
+        <td>${item.quantity}</td>
+        <td>${item.price}</td>
+    </tr>
+    `
+})
+
+details1.innerHTML=output1;
+
+let details2=document.getElementById("table2");
+let output2=`
+<tr>
+    <th>Item</th>
+    <th>Quanity</th>
+    <th>Price</th>
+    <th>Total Price</th>
+</tr>
+`;
+
+let totalPriceItem=orders.map((item)=>{
+    return{
+        ...item,
+        totalPrice:(item.quantity*item.price)
+    }
+});
+console.log(totalPriceItem);
+
+
+// let totalAmountItem=0;
+totalPriceItem.forEach((item)=>{
+    // totalAmountItem=totalAmountItem+(item.quantity*item.price);
+
+    output2=output2+`
+    <tr>
+        <td>${item.item}</td>
+        <td>${item.quantity}</td>
+        <td>${item.price}</td>
+        <td>${item.totalPrice.toFixed(2)}</td>
+    </tr>
+    `
+})
+
+details2.innerHTML=output2;
+
+let details3=document.getElementById("table3");
+let output3=`
+<tr>
+    <th>Item</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Total Price</th>
+</tr>
+`;
+
+let totalAmount=0;
+totalPriceItem.forEach((item)=>{
+    totalAmount=totalAmount+item.totalPrice;
+});
+console.log(totalAmount);
+
+totalPriceItem.forEach((item)=>{
+    output3=output3+`
+    <tr>
+        <td>${item.item}</td>
+        <td>${item.quantity}</td>
+        <td>${item.price}</td>
+        <td>${item.totalPrice.toFixed(2)}</td>
+    </tr>
+    `;
+});
+
+output3=output3+`
+<tr>
+    <th colspan="3">Total Amount</th>
+    <td>${totalAmount.toFixed(2)}</td
+</td>
+`
+
+details3.innerHTML=output3;
+
+
+let details4=document.getElementById("table4");
+let output4=`
+<tr>
+    <th>Item</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Total Price</th>
+</tr>
+`;
+
+totalPriceItem.forEach((item)=>{
+    output4=output4+`
+    <tr>
+    <td>${item.item}</td>   
+    <td>${item.quantity}</td>   
+    <td>${item.price}</td>   
+    <td>${item.totalPrice.toFixed(2)}</td>   
+    </tr>
+    `;
+});
+
+let totalQuantity=0;
+totalPriceItem.forEach((item)=>{
+    totalQuantity=totalQuantity+item.quantity;
+})
+console.log(totalQuantity);
+
+output4=output4+`
+<tr>
+    <tr>
+        <th>Total Quantity</th>
+        <td colspan="3" style="text-align:center">${totalQuantity.toFixed(2)}</td>
+    </tr>
+    <tr>
+    <th colspan="3">Total Amount</th>
+    <td>${totalAmount.toFixed(2)}</td>
+    </tr>
+</tr>
+`;
+// totalPriceItem
+
+details4.innerHTML=output4;
+    </script>
+</body>
+</html>

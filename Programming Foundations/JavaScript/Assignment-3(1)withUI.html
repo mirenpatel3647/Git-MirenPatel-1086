@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-3(1.1)</title>
+    <style>
+        table,th, td{
+            border-collapse: collapse;
+            /* border-width: ; */
+            /* border-style: solid; */
+            /* border-width: px; */
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Employee Details</h2>
+    <!-- <table border="1" id="emp1"></table> -->
+    <table id="emp1"></table>
+    <h2>Filtered Employee</h2>
+    <table id="emp2"></table>
+    <h2>Increase Salary</h2>
+    <table id="emp3"></table>
+    <h2>Add Property Level</h2>
+    <table id="emp4"></table>
+
+    <script>
+        let employees=[
+            {
+                name:"Miren",
+                salary:60000
+            },
+            {
+                name:"Smit",
+                salary:40000
+            },
+            {
+                name:"Kirtan",
+                salary:50000
+            },
+            {
+                name:"Dhaval",
+                salary:750000
+            }
+        ];
+        console.log(employees);
+
+        let details1=document.getElementById("emp1");
+        let output1=`
+        <tr>
+            <th>Name</th>
+            <th>Salary</th>
+        </tr>
+        `;
+
+        employees.forEach((emp)=>{
+            output1=output1+`
+            <tr>
+                <td>${emp.name}</td>
+                <td>${emp.salary}</td>
+            </tr>
+            `
+        });
+        
+        details1.innerHTML=output1;
+
+
+        let filteredSalary=employees.filter((emp)=>{
+            return emp.salary>40000;
+        });
+        console.log(filteredSalary);
+
+        let details2=document.getElementById("emp2");
+        let output2=`
+        <tr>
+            <th>Name</th>
+            <th>Salary</th>
+        </tr>
+        `;
+
+        filteredSalary.forEach((emp)=>{
+            output2=output2+`
+            <tr>
+                <td>${emp.name}</td>
+                <td>${emp.salary}</td>
+            </tr>
+            `;
+        });
+        details2.innerHTML=output2;
+
+
+                let increaseSalaryEmp=filteredSalary.map((emp)=>{
+            return {
+                ...emp,
+                increaseSalary:(emp.salary*1.10).toFixed(2)
+            }
+        });
+        console.log(increaseSalaryEmp);
+        
+        let details3=document.getElementById("emp3");
+        let output3=`
+        <tr>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Increase Salary</th>
+        </tr>
+        `;
+
+        increaseSalaryEmp.forEach((emp)=>{
+            output3=output3+`
+            <tr>
+                <td>${emp.name}</td>
+                <td>${emp.salary}</td>
+                <td>${emp.increaseSalary}</td>
+            </tr>
+            `
+        });
+
+        details3.innerHTML=output3;
+
+        let details4=document.getElementById("emp4");
+        let output4=`
+        <tr>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Increase Salary</th>
+            <th>Level</th>
+        </tr>
+        `;
+
+        let level;
+        increaseSalaryEmp.forEach((emp)=>{
+            if(emp.increaseSalary>70000){
+                level="Senior"
+            }
+            else{
+                level="Mid"
+            }
+            output4=output4+`
+            <tr>
+                <td>${emp.name}</td>
+                <td>${emp.salary}</td>
+                <td>${emp.increaseSalary}</td>
+                <td>${level}</td>
+            </tr>
+            `
+        })
+
+        details4.innerHTML=output4;
+    </script>
+</body>
+</html>
